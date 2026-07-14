@@ -52,7 +52,7 @@ Pause All Downloads, Resume All Downloads.
 
 - **Open in Quill** -- launch the full QUILL editor. (One standalone difference: "Send Show Notes to Editor" copies notes to the clipboard instead, since there is no editor here.)
 - **Redeem Unlock Code...** -- enter a signed unlock code for a pre-release capability. Verified entirely on your machine; nothing is transmitted. A code redeemed here counts for QUILL and Quill Radio too -- all three share one unlock store.
-- **Check for Updates...** -- compares your version with the newest release of QUILL Cast and offers to open the download page.
+- **Check for Updates...** -- compares your version with the newest release of QUILL Cast, downloads the installer in-app with spoken progress, then offers Install now (closes the app and runs the installer) or Open folder.
 - **About QUILL Cast** -- version, sync statement, and the project address.
 
 ## The system tray

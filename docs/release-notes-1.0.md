@@ -15,7 +15,7 @@ Your shows, on their own. QUILL Cast takes the podcast environment QUILL users a
 - **A tray citizen.** Close to the notification area and keep listening; control playback from the tray menu.
 - **Spoken feedback everywhere.** Every action announces its outcome through your screen reader -- JAWS, NVDA, or Narrator -- without stealing focus.
 - **One data store.** Subscriptions, queue, positions, notes, and downloads are shared with QUILL and Quill Radio. Subscribe here, see it there.
-- **Redeem Unlock Code and Check for Updates, built in.** Signed unlock codes are verified entirely offline and count for all three apps; the update check compares your version against this repository's releases and offers the download page.
+- **Check for Updates, built in.** The update check compares your version against this repository's releases, downloads the installer in-app with spoken progress, and offers Install now.
 - **Open in Quill.** The full editor is one menu item away. (Send Show Notes to Editor copies to the clipboard here -- there is no editor buffer to send to.)
 
 ## What QUILL Cast deliberately is not
@@ -32,5 +32,4 @@ Windows 10 or 11, x64 (or ARM64 under emulation). No Python installation require
 
 ## Known limitations
 
-- Check for Updates opens the release page rather than updating in place.
 - Global hotkeys for transport are configured from full QUILL (Tools > Global Hotkeys...), not from this app, in 1.0.

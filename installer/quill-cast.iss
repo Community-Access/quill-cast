@@ -1,18 +1,17 @@
-; QUILL Cast installer.
-; Compile with:  ISCC quill-cast.iss /DPayloadDir=..\payload
-; PayloadDir is a QUILL Windows portable bundle (embedded Python runtime
-; flattened at the root plus Lib\site-packages\quill), produced by the main
-; repo's scripts/build_windows_distribution.py. See scripts/build_installer.ps1.
-
-#ifndef PayloadDir
-  #define PayloadDir "..\payload"
-#endif
+; QUILL Cast installer -- ships the PyInstaller one-file build.
+; Compile with:  ISCC quill-cast.iss [/DFfmpegDir=<dir with ffmpeg.exe>]
+; Prerequisite:  ..\dist\QUILLCast.exe  (scripts\build_exe.ps1)
+;
+; Everything the app needs is bundled -- no on-demand component downloads.
+; FfmpegDir supplies ffmpeg.exe/ffprobe.exe (auto-trim silence, normalize
+; loudness); they install to {app}\tools\ffmpeg, which the app finds via
+; QUILL_APP_ROOT.
 
 #define AppName "QUILL Cast"
 #define AppVersion "1.0.0"
 #define AppPublisher "Community Access"
 #define AppURL "https://github.com/Community-Access/quill-cast"
-#define AppExeName "quill.exe"
+#define AppExeName "QUILLCast.exe"
 
 [Setup]
 AppId={{316B5D30-E16B-4973-95B6-968F5D897FD7}}
@@ -49,42 +48,27 @@ SetupLogging=yes
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
-; Only what QUILL Cast needs ships. Everything the full QUILL installer
-; already fetches on demand stays on demand, and the components Cast never
-; touches -- transcription (whisper.cpp / Faster Whisper / Vosk), neural TTS
-; voices (Kokoro / Piper), braille, Pandoc, DECtalk, eSpeak-NG, Node.js,
-; offline wheels, the PRD -- are excluded from the payload copy outright.
-; Feed-provided podcast transcripts (Podcasting 2.0) are plain downloads and
-; still work; they never needed the transcription engines.
-
-[InstallDelete]
-; Upgrade hygiene, same rationale as the QUILL installer: wipe our own
-; package tree before [Files] re-lays it so renamed/removed modules never
-; linger and cause version-skew import errors.
-Type: filesandordirs; Name: "{app}\Lib\site-packages\quill"
-Type: filesandordirs; Name: "{app}\__pycache__"
-
 [Files]
-Source: "{#PayloadDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "docs\*,*\__pycache__\*,tools\*,vendor\*,wheels\*,kokoro-models\*,speech-models-bundled\*,_tool-download\*,_speech-download\*"
+Source: "..\dist\{#AppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+#ifdef FfmpegDir
+Source: "{#FfmpegDir}\ffmpeg.exe"; DestDir: "{app}\tools\ffmpeg"; Flags: ignoreversion
+Source: "{#FfmpegDir}\ffprobe.exe"; DestDir: "{app}\tools\ffmpeg"; Flags: ignoreversion skipifsourcedoesntexist
+#endif
 Source: "..\docs\userguide.md"; DestDir: "{app}\docs"; Flags: ignoreversion
 Source: "..\docs\release-notes-1.0.md"; DestDir: "{app}\docs"; Flags: ignoreversion
 Source: "..\README.md"; DestDir: "{app}"; DestName: "README-QUILL-Cast.md"; Flags: ignoreversion
 
 [Icons]
-Name: "{group}\{#AppName}"; Filename: "{app}\{#AppExeName}"; Parameters: "-m quill.apps.podcasts"; WorkingDir: "{app}"
+Name: "{group}\{#AppName}"; Filename: "{app}\{#AppExeName}"; WorkingDir: "{app}"
 Name: "{group}\{#AppName} User Guide"; Filename: "{app}\docs\userguide.md"
 Name: "{group}\Uninstall {#AppName}"; Filename: "{uninstallexe}"
-Name: "{autodesktop}\{#AppName}"; Filename: "{app}\{#AppExeName}"; Parameters: "-m quill.apps.podcasts"; WorkingDir: "{app}"; Tasks: desktopicon
+Name: "{autodesktop}\{#AppName}"; Filename: "{app}\{#AppExeName}"; WorkingDir: "{app}"; Tasks: desktopicon
 
 [Tasks]
 Name: "desktopicon"; Description: "Create a &desktop icon"; GroupDescription: "Additional icons:"; Flags: unchecked
 
 [Run]
-Filename: "{app}\{#AppExeName}"; Parameters: "-m quill.apps.podcasts"; Description: "Launch {#AppName}"; Flags: postinstall nowait skipifsilent unchecked
-
-[UninstallDelete]
-Type: filesandordirs; Name: "{app}\__pycache__"
-Type: filesandordirs; Name: "{app}\Lib"
+Filename: "{app}\{#AppExeName}"; Description: "Launch {#AppName}"; Flags: postinstall nowait skipifsilent unchecked
 
 ; Deliberately NO data-wipe prompt on uninstall: QUILL Cast shares its
 ; settings, subscriptions, and downloads store (%APPDATA%\Quill) with QUILL
