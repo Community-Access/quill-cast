@@ -2,6 +2,11 @@
 
 Your shows, on their own. QUILL Cast takes the podcast environment QUILL users already know and gives it a window, a menu bar, and a tray icon of its own -- for the days you want your queue without the manuscript.
 
+## What's new in 1.0.1
+
+- **Automatic Check for Updates.** QUILL Cast quietly checks for a newer version once a day when it launches -- silent unless a real update is found, at which point you get the same "download it now?" prompt Help > Check for Updates always gave you. Throttled so it never hits the network on every single launch.
+- **Preferences...** (Ctrl+,) is a new, small dialog gathering the app's startup behavior in one place: Resume Last Episode on Launch and the new automatic update check, each its own checkbox. Turning either off takes effect immediately.
+
 ## Highlights
 
 - **Your library, on the front page.** The main window is your library tree -- the same pinned views the Manager shows (Favorites, New Episodes, Continue Listening, Inbox) above your nested folders and the shows filed in them, each with a live unplayed count and a full context menu (Play/Stop, Favorite toggle, Move to Folder, Unsubscribe, New Folder) one Shift+F10 away. Enter on a show plays its next unplayed episode directly -- no detour through the Manager required.

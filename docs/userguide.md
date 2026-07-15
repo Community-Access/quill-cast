@@ -39,7 +39,7 @@ The Manager (Ctrl+M) is where episode-level life happens, and it is the same Man
 
 ### Subscriptions (Alt+S)
 
-Open Podcast Manager... (Ctrl+M), Add Podcast..., Import OPML..., Export OPML..., New Folder... (creates a library folder without opening the Manager), Add Local Podcast..., Scan Watched Folders, Subscribe to ACB Media Podcasts, Podcast Settings..., **Resume Last Episode on Launch** (check item -- the appliance switch), Send to Tray (Ctrl+W), Exit.
+Open Podcast Manager... (Ctrl+M), Add Podcast..., Import OPML..., Export OPML..., New Folder... (creates a library folder without opening the Manager), Add Local Podcast..., Scan Watched Folders, Subscribe to ACB Media Podcasts, Podcast Settings..., **Resume Last Episode on Launch** (check item -- the appliance switch), **Preferences...** (Ctrl+,) -- Resume Last Episode on Launch and automatic Check for Updates in one small dialog, Send to Tray (Ctrl+W), Exit.
 
 ### Episode (Alt+E)
 
@@ -56,7 +56,7 @@ One standalone difference from QUILL: "Send Show Notes to Editor" copies notes t
 - **Command Palette...** (Ctrl+Shift+P) -- every QUILL Cast command in one searchable list.
 - **Get FFmpeg...** -- a safety net: ffmpeg ships inside QUILL Cast for trim/normalize passes, but if it ever goes missing this downloads the official build so those settings work again.
 - **Redeem Unlock Code...** -- enter a signed unlock code for a pre-release capability. Verified entirely on your machine; nothing is transmitted. A code redeemed here counts for QUILL and Quill Radio too -- all three share one unlock store.
-- **Check for Updates...** -- compares your version with the newest release of QUILL Cast, downloads the installer in-app with spoken progress, then offers Install now (closes the app and runs the installer) or Open folder.
+- **Check for Updates...** -- compares your version with the newest release of QUILL Cast, downloads the installer in-app with spoken progress, then offers Install now (closes the app and runs the installer) or Open folder. QUILL Cast also runs this check quietly once a day on launch -- silent unless it actually finds something; Subscriptions > Preferences (Ctrl+,) turns it off.
 - **About QUILL Cast** -- version, sync statement, and the project address.
 
 ## Hardware media keys
@@ -82,6 +82,7 @@ QUILL Cast reads and writes the same data store as QUILL and Quill Radio (`%APPD
 | Open Podcast Manager | Ctrl+M |
 | Play/Pause | Ctrl+P |
 | Send to tray | Ctrl+W |
+| Preferences | Ctrl+, |
 | Play selected show's next episode | Enter (in the tree) |
 | Unsubscribe / delete folder | Delete (in the tree) |
 | Tree context menu | Shift+F10 (in the tree) |

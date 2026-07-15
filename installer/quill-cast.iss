@@ -8,7 +8,7 @@
 ; installed copy must keep using the shared %APPDATA%\Quill store.
 
 #define AppName "QUILL Cast"
-#define AppVersion "1.0.0"
+#define AppVersion "1.0.1"
 #define AppPublisher "Community Access"
 #define AppURL "https://github.com/Community-Access/quill-cast"
 #define AppExeName "QUILLCast.exe"
@@ -21,7 +21,7 @@ AppPublisher={#AppPublisher}
 AppPublisherURL={#AppURL}
 AppSupportURL={#AppURL}
 AppUpdatesURL={#AppURL}
-VersionInfoVersion=1.0.0.0
+VersionInfoVersion=1.0.1.0
 VersionInfoCompany={#AppPublisher}
 VersionInfoDescription={#AppName} accessible podcast player
 DefaultDirName={autopf}\{#AppName}
