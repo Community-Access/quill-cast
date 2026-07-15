@@ -38,7 +38,7 @@ The Manager (Ctrl+M) is where episode-level life happens, and it is the same Man
 
 ### Subscriptions (Alt+S)
 
-Open Podcast Manager... (Ctrl+M), Add Podcast..., Import OPML..., Export OPML..., Add Local Podcast..., Scan Watched Folders, Subscribe to ACB Media Podcasts, Podcast Settings...
+Open Podcast Manager... (Ctrl+M), Add Podcast..., Import OPML..., Export OPML..., New Folder... (creates a library folder without opening the Manager), Add Local Podcast..., Scan Watched Folders, Subscribe to ACB Media Podcasts, Podcast Settings..., Send to Tray (Ctrl+W), Exit.
 
 ### Episode (Alt+E)
 
@@ -50,7 +50,8 @@ Pause All Downloads, Resume All Downloads.
 
 ### Help (Alt+H)
 
-- **Open in Quill** -- launch the full QUILL editor. (One standalone difference: "Send Show Notes to Editor" copies notes to the clipboard instead, since there is no editor here.)
+One standalone difference from QUILL: "Send Show Notes to Editor" copies notes to the clipboard instead, since there is no editor here.
+
 - **Redeem Unlock Code...** -- enter a signed unlock code for a pre-release capability. Verified entirely on your machine; nothing is transmitted. A code redeemed here counts for QUILL and Quill Radio too -- all three share one unlock store.
 - **Check for Updates...** -- compares your version with the newest release of QUILL Cast, downloads the installer in-app with spoken progress, then offers Install now (closes the app and runs the installer) or Open folder.
 - **About QUILL Cast** -- version, sync statement, and the project address.
@@ -69,6 +70,7 @@ QUILL Cast reads and writes the same data store as QUILL and Quill Radio (`%APPD
 | --- | --- |
 | Open Podcast Manager | Ctrl+M |
 | Play/Pause | Ctrl+P |
+| Send to tray | Ctrl+W |
 | Open selected show | Enter (in the list) |
 | Subscriptions menu | Alt+S |
 | Episode menu | Alt+E |

@@ -16,7 +16,7 @@ Your shows, on their own. QUILL Cast takes the podcast environment QUILL users a
 - **Spoken feedback everywhere.** Every action announces its outcome through your screen reader -- JAWS, NVDA, or Narrator -- without stealing focus.
 - **One data store.** Subscriptions, queue, positions, notes, and downloads are shared with QUILL and Quill Radio. Subscribe here, see it there.
 - **Check for Updates, built in.** The update check compares your version against this repository's releases, downloads the installer in-app with spoken progress, and offers Install now.
-- **Open in Quill.** The full editor is one menu item away. (Send Show Notes to Editor copies to the clipboard here -- there is no editor buffer to send to.)
+- **Folders from the menu.** Subscriptions > New Folder... creates a library folder without opening the Manager; Send to Tray (Ctrl+W) and Exit live there too. (Send Show Notes to Editor copies to the clipboard here -- there is no editor buffer to send to.)
 
 ## What QUILL Cast deliberately is not
 

@@ -16,7 +16,7 @@ QUILL Cast is not a fork. The whole application lives in the [quill](https://git
 - Live in the system tray; share settings, subscriptions, and downloads with QUILL and Quill Radio (one data store in `%APPDATA%\Quill`).
 - Check for its own updates from Help > Check for Updates.
 
-Deliberately not included: QUILL's editor, AI, speech transcription engines, braille, and speech-synthesis stacks. Feed-provided transcripts are plain downloads and work fully; nothing here generates transcripts from audio. Help > Open in Quill launches the full editor when you want it.
+Deliberately not included: QUILL's editor, AI, speech transcription engines, braille, and speech-synthesis stacks. Feed-provided transcripts are plain downloads and work fully; nothing here generates transcripts from audio.
 
 ## Install
 
