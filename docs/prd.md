@@ -17,14 +17,19 @@ QUILL Cast is QUILL's podcast environment, shipped as its own small Windows app 
 In scope (all reused from upstream):
 
 - Subscriptions: search, feed URL, OPML import/export, ACB Media directory, podcast settings.
+- **Main-page library tree**: the same pinned views (Favorites, New Episodes, Continue Listening, Inbox) and nested folders the Podcast Manager shows, right on the main window, with a full context menu (Play/Stop, Favorite toggle, Move to Folder, Unsubscribe, New Folder). Enter on a show plays its next unplayed episode directly.
+- **One state-aware transport control** (Play/Pause/Resume) and a **Favorites toggle button** for whatever show is currently playing, mirroring Quill Radio's main-page pattern.
+- **Resume Last Episode on Launch** (an appliance switch, backed by a shared recently-played history store) and a **Recently Played** submenu, distinct from the Continue Listening virtual view.
+- **Play Queue** reachable as a top-level menu item and a registered command, not only from inside the Manager dialog.
+- **Mute/Unmute** for podcast playback.
 - The full Podcast Manager: pinned views (Favorites, New Episodes, Continue Listening), Inbox with per-show filing memory, Play Queue with keyboard reordering, Search Everywhere, filters.
 - Playback: transport, chapters, volume boost, sleep-timer-safe restore, reliable position saves.
 - Feed-provided transcripts (Podcasting 2.0; VTT/SRT/JSON), cached; episode notes with timestamp jump.
 - Local podcasts and watched folders (stored outside the synced data folder by construction).
-- Downloads: queue, pause/resume all, Always Sync, auto-trim silence, normalize loudness.
+- Downloads: queue, pause/resume all, Always Sync, auto-trim silence, normalize loudness, and **auto-reconnect on a dropped connection** (configurable attempts/wait, mirroring Quill Radio's recording reconnect).
 - System tray presence with podcast controls.
 - Announcement-engine speech through the user's screen reader.
-- Help: Open in Quill, Redeem Unlock Code (shared unlock store), basic Check for Updates against this repo's releases, About.
+- Help: Get FFmpeg (recovery download if the bundled copy goes missing), Open in Quill, Redeem Unlock Code (shared unlock store), basic Check for Updates against this repo's releases, About.
 - Unlock-gated Audio Description Project menu (top-level) when `future.adp_assistant` is unlocked.
 
 Out of scope, by decision (D-1, "basic level of functionality"):
@@ -37,17 +42,17 @@ Out of scope, by decision (D-1, "basic level of functionality"):
 ## 4. Accessibility requirements
 
 - A-1. Every interactive element has an accessible name; the inventory gate upstream audits the shared surfaces.
-- A-2. Focus lands on the subscribed-shows list at launch; a bare-frame focus dead zone is a defect.
+- A-2. Focus lands on the library tree at launch; a bare-frame focus dead zone is a defect.
 - A-3. All dialogs route through the shared dialog contract (modal ids, focus placement, region announcements).
 - A-4. Every action announces its outcome through the announcement engine; silent state changes are defects.
 - A-5. Full keyboard operation, including Play Queue reordering; the tray menu is reachable with keyboard alone.
 
 ## 5. Packaging requirements
 
-- P-1. Inno Setup installer, own AppId, installs to its own directory ({autopf}\QUILL Cast), per-user privileges by default.
-- P-2. Payload = upstream portable bundle minus excluded components (tools\*, vendor\*, wheels\*, model stores, upstream docs); see installer/quill-cast.iss.
+- P-1. PyInstaller onedir build with the app's own icon; Inno Setup installer with its own AppId, installs to its own directory ({autopf}\QUILL Cast), per-user privileges by default.
+- P-2. Everything bundled, nothing downloaded at install or runtime: the onedir build carries the whole quill package and data (`collect_all("quill")`); ffmpeg installs to {app}\tools\ffmpeg, found via the wrapper exporting QUILL_APP_ROOT. A portable zip ships the same onedir build plus a `data\` folder that switches storage to travel with the app.
 - P-3. Uninstall never deletes `%APPDATA%\Quill` -- QUILL or Quill Radio may still use it. Only the full QUILL uninstaller owns that decision.
-- P-4. Upgrade hygiene: the installer wipes its own `Lib\site-packages\quill` before re-laying files so module renames upstream never leave stale imports.
+- P-4. Upgrade hygiene: the installer wipes its own `{app}\_internal` tree before re-laying files so module renames upstream never leave stale imports.
 
 ## 6. Update requirements
 

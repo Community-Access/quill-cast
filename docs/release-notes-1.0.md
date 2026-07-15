@@ -4,7 +4,12 @@ Your shows, on their own. QUILL Cast takes the podcast environment QUILL users a
 
 ## Highlights
 
-- **Shows first.** The app opens with your subscriptions focused; Enter opens the Podcast Manager on that show.
+- **Your library, on the front page.** The main window is your library tree -- the same pinned views the Manager shows (Favorites, New Episodes, Continue Listening, Inbox) above your nested folders and the shows filed in them, each with a live unplayed count and a full context menu (Play/Stop, Favorite toggle, Move to Folder, Unsubscribe, New Folder) one Shift+F10 away. Enter on a show plays its next unplayed episode directly -- no detour through the Manager required.
+- **One transport button, not two dead ones.** Play becomes Pause while playing and Resume while paused, exactly like the panel it sits on. A Favorites button tracks whatever is playing and flips to Remove when it's already saved.
+- **Podcasts as an appliance.** Check Subscriptions > Resume Last Episode on Launch once, and opening QUILL Cast is all you ever do -- it picks up exactly where you left off. A Recently Played submenu (Episode menu) keeps your last fifteen episodes one keystroke deep, distinct from the Continue Listening view's in-progress list.
+- **Play Queue, promoted.** The same reorderable cross-show queue the Manager offers now has its own top-level menu item and Command Palette entry -- no longer a button buried in a dialog.
+- **Mute, everywhere you'd expect it.** A dedicated Mute/Unmute command silences playback without losing your level.
+- **Downloads that survive a dropped connection.** If your internet hiccups mid-download, QUILL Cast retries automatically instead of leaving the episode stuck in Failed status, resuming from the partial file already on disk. How many attempts and how long to wait between them are yours to tune in Podcast Settings.
 - **The whole Manager.** Pinned Favorites, New Episodes, and Continue Listening views; an Inbox that triages episodes into your own folders and remembers how you file each show; episode and show filters that narrow the list live.
 - **A Play Queue that behaves.** Play Next or Add to Queue from any episode, auto-advance when one ends, survives restarts, and reorders entirely from the keyboard -- Move Up/Down, or Mark and Move for long hops.
 - **Search Everywhere.** Shows, episodes, your notes, and fetched transcripts, one search, straight to the result.
@@ -13,6 +18,7 @@ Your shows, on their own. QUILL Cast takes the podcast environment QUILL users a
 - **ACB Media, one command.** Subscribe to ACB's whole live directory idempotently.
 - **Downloads that respect you.** Pause/resume all; Always Sync for shows you want complete; auto-trim silence and normalize loudness on finished downloads; a volume boost that never disturbs the Sleep Timer's restore volume.
 - **A tray citizen.** Close to the notification area and keep listening; control playback from the tray menu.
+- **Two flavors, everything bundled.** A system installer and a truly portable zip whose `data` folder keeps your whole library on the stick. ffmpeg included, its own app icon, no downloads ever -- and if ffmpeg somehow goes missing, **Help > Get FFmpeg...** restores it from the official source.
 - **Spoken feedback everywhere.** Every action announces its outcome through your screen reader -- JAWS, NVDA, or Narrator -- without stealing focus.
 - **One data store.** Subscriptions, queue, positions, notes, and downloads are shared with QUILL and Quill Radio. Subscribe here, see it there.
 - **Check for Updates, built in.** The update check compares your version against this repository's releases, downloads the installer in-app with spoken progress, and offers Install now.

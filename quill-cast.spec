@@ -1,9 +1,14 @@
-# PyInstaller spec for the one-file QUILL Cast build.
-# Build with: pyinstaller quill-cast.spec  (see scripts/build_exe.ps1)
+# PyInstaller spec for the QUILL Cast onedir build.
+# Build with: scripts/build_release.ps1 (stages ffmpeg/docs/data, zips the
+# portable, compiles the installer) or pyinstaller quill-cast.spec directly.
 #
-# collect_all("quill") brings the entire quill package -- code and package
-# data (schemas, sounds, bundled quillins, assets) -- so nothing the shared
-# feature code needs is missing from the frozen build. One file, windowed.
+# Onedir, not onefile, on purpose: one built folder feeds BOTH products --
+# zip it for the portable, point Inno Setup at it for the system install --
+# and the app starts instantly instead of re-extracting to a temp folder on
+# every launch. Same rationale as quill-radio.spec. collect_all("quill")
+# brings the entire quill package -- code and package data (schemas, sounds,
+# bundled quillins, assets, and the build-time _feedback_token module) -- so
+# nothing the shared feature code needs is missing from the frozen build.
 
 from PyInstaller.utils.hooks import collect_all
 
@@ -36,11 +41,18 @@ pyz = PYZ(a.pure)
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
-    a.datas,
+    exclude_binaries=True,
     name="QUILLCast",
     icon="assets/quill-cast.ico",
     console=False,
     upx=False,
     disable_windowed_traceback=False,
+)
+
+coll = COLLECT(
+    exe,
+    a.binaries,
+    a.datas,
+    name="QUILLCast",
+    upx=False,
 )

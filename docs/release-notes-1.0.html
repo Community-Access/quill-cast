@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>QUILL Cast - release-notes-1.0</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">QUILL Cast - release-notes-1.0</h1>
+</header>
+<h1 id="quill-cast-10----release-notes">QUILL Cast 1.0 -- Release
+Notes</h1>
+<p>Your shows, on their own. QUILL Cast takes the podcast environment
+QUILL users already know and gives it a window, a menu bar, and a tray
+icon of its own -- for the days you want your queue without the
+manuscript.</p>
+<h2 id="highlights">Highlights</h2>
+<ul>
+<li><strong>Your library, on the front page.</strong> The main window is
+your library tree -- the same pinned views the Manager shows (Favorites,
+New Episodes, Continue Listening, Inbox) above your nested folders and
+the shows filed in them, each with a live unplayed count and a full
+context menu (Play/Stop, Favorite toggle, Move to Folder, Unsubscribe,
+New Folder) one Shift+F10 away. Enter on a show plays its next unplayed
+episode directly -- no detour through the Manager required.</li>
+<li><strong>One transport button, not two dead ones.</strong> Play
+becomes Pause while playing and Resume while paused, exactly like the
+panel it sits on. A Favorites button tracks whatever is playing and
+flips to Remove when it's already saved.</li>
+<li><strong>Podcasts as an appliance.</strong> Check Subscriptions &gt;
+Resume Last Episode on Launch once, and opening QUILL Cast is all you
+ever do -- it picks up exactly where you left off. A Recently Played
+submenu (Episode menu) keeps your last fifteen episodes one keystroke
+deep, distinct from the Continue Listening view's in-progress list.</li>
+<li><strong>Play Queue, promoted.</strong> The same reorderable
+cross-show queue the Manager offers now has its own top-level menu item
+and Command Palette entry -- no longer a button buried in a dialog.</li>
+<li><strong>Mute, everywhere you'd expect it.</strong> A dedicated
+Mute/Unmute command silences playback without losing your level.</li>
+<li><strong>Downloads that survive a dropped connection.</strong> If
+your internet hiccups mid-download, QUILL Cast retries automatically
+instead of leaving the episode stuck in Failed status, resuming from the
+partial file already on disk. How many attempts and how long to wait
+between them are yours to tune in Podcast Settings.</li>
+<li><strong>The whole Manager.</strong> Pinned Favorites, New Episodes,
+and Continue Listening views; an Inbox that triages episodes into your
+own folders and remembers how you file each show; episode and show
+filters that narrow the list live.</li>
+<li><strong>A Play Queue that behaves.</strong> Play Next or Add to
+Queue from any episode, auto-advance when one ends, survives restarts,
+and reorders entirely from the keyboard -- Move Up/Down, or Mark and
+Move for long hops.</li>
+<li><strong>Search Everywhere.</strong> Shows, episodes, your notes, and
+fetched transcripts, one search, straight to the result.</li>
+<li><strong>Transcripts and notes.</strong> Feed-provided transcripts
+(Podcasting 2.0) save or open instantly from cache; episode notes
+timestamp the playing moment, and Enter on a note jumps playback
+there.</li>
+<li><strong>Local podcasts.</strong> Your own audio files become shows,
+with watched folders that turn dropped files into new episodes. Stored
+outside the synced data folder by construction.</li>
+<li><strong>ACB Media, one command.</strong> Subscribe to ACB's whole
+live directory idempotently.</li>
+<li><strong>Downloads that respect you.</strong> Pause/resume all;
+Always Sync for shows you want complete; auto-trim silence and normalize
+loudness on finished downloads; a volume boost that never disturbs the
+Sleep Timer's restore volume.</li>
+<li><strong>A tray citizen.</strong> Close to the notification area and
+keep listening; control playback from the tray menu.</li>
+<li><strong>Two flavors, everything bundled.</strong> A system installer
+and a truly portable zip whose <code>data</code> folder keeps your whole
+library on the stick. ffmpeg included, its own app icon, no downloads
+ever -- and if ffmpeg somehow goes missing, <strong>Help &gt; Get
+FFmpeg...</strong> restores it from the official source.</li>
+<li><strong>Spoken feedback everywhere.</strong> Every action announces
+its outcome through your screen reader -- JAWS, NVDA, or Narrator --
+without stealing focus.</li>
+<li><strong>One data store.</strong> Subscriptions, queue, positions,
+notes, and downloads are shared with QUILL and Quill Radio. Subscribe
+here, see it there.</li>
+<li><strong>Check for Updates, built in.</strong> The update check
+compares your version against this repository's releases, downloads the
+installer in-app with spoken progress, and offers Install now.</li>
+<li><strong>Folders from the menu.</strong> Subscriptions &gt; New
+Folder... creates a library folder without opening the Manager; Send to
+Tray (Ctrl+W) and Exit live there too. (Send Show Notes to Editor copies
+to the clipboard here -- there is no editor buffer to send to.)</li>
+</ul>
+<h2 id="what-quill-cast-deliberately-is-not">What QUILL Cast
+deliberately is not</h2>
+<p>It is not QUILL minus some menus -- it is the podcast app, period.
+The editor, AI, speech transcription engines, braille, and
+speech-synthesis stacks are not installed at all, which keeps the
+install small and the app simple. Feed transcripts still work fully;
+generating transcripts from audio is full QUILL's job, one Help menu
+item away.</p>
+<h2 id="not-a-fork----a-guarantee">Not a fork -- a guarantee</h2>
+<p>QUILL Cast runs the exact same podcast feature code as QUILL, from
+the same upstream package. Fixes and features land upstream once and
+reach QUILL, QUILL Cast, and Quill Radio together. This repository only
+carries the wrapper, the installer, and these docs.</p>
+<h2 id="requirements">Requirements</h2>
+<p>Windows 10 or 11, x64 (or ARM64 under emulation). No Python
+installation required.</p>
+<h2 id="known-limitations">Known limitations</h2>
+<ul>
+<li>Global hotkeys for transport are configured from full QUILL (Tools
+&gt; Global Hotkeys...), not from this app, in 1.0.</li>
+</ul>
+</body>
+</html>
