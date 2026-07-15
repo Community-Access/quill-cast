@@ -2,6 +2,10 @@
 
 Your shows, on their own. QUILL Cast takes the podcast environment QUILL users already know and gives it a window, a menu bar, and a tray icon of its own -- for the days you want your queue without the manuscript.
 
+## What's new (unreleased)
+
+- **Sound Enhancements.** Episode > Sound Enhancements... adds an equalizer preset (Flat, Bass Boost, Voice Clarity, Podcast), a compressor ("Even Out Volume"), and **Smart Speed** (trims silence between words and sentences, live and reversible on any episode, distinct from the one-time leading/trailing trim Downloads already offers) -- all applied through the ffmpeg QUILL Cast already uses for download processing. Off by default. Full seek and scrub-bar support while enhanced: scrubbing or toggling anything on/off never loses your place or forces a paused episode to resume.
+
 ## What's new in 1.0.1
 
 - **Automatic Check for Updates.** QUILL Cast quietly checks for a newer version once a day when it launches -- silent unless a real update is found, at which point you get the same "download it now?" prompt Help > Check for Updates always gave you. Throttled so it never hits the network on every single launch.

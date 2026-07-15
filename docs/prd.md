@@ -61,4 +61,10 @@ Out of scope, by decision (D-1, "basic level of functionality"):
 
 ## 7. Non-goals
 
-macOS/Linux standalone builds (upstream QUILL covers macOS; the tray-icon pattern does not exist there), auto-updating in place, telemetry of any kind.
+macOS/Linux standalone builds (upstream QUILL covers macOS; the tray-icon pattern does not exist there), auto-updating in place, telemetry of any kind. A full DSP effects rack (reverb, tempo/pitch, spatial audio) -- Sound Enhancements (§8) is a small, purpose-built EQ preset, compressor, and Smart Speed, not a general effects rack.
+
+## 8. Since 1.0
+
+- **Sound Enhancements** (Episode > Sound Enhancements...): an equalizer preset, a compressor, and Smart Speed (live silence trimming between words/sentences), applied via an ffmpeg filter graph relayed to the playback engine over a loopback-only local HTTP server -- shared with Quill Radio's own Sound Enhancements. Off by default. Full seek/scrub-bar support while enhanced (an ffmpeg `-ss` restart is how scrubbing works, since a running relay can't be seeked within; duration comes from an independent `ffprobe` call).
+
+See `CHANGELOG.md` for the full, versioned history.

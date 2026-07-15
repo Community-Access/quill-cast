@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc 3.10" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>QUILL Cast - prd</title>
+  <title>prd</title>
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -176,18 +176,15 @@
   </style>
 </head>
 <body>
-<header id="title-block-header">
-<h1 class="title">QUILL Cast - prd</h1>
-</header>
-<h1 id="quill-cast----product-requirements">QUILL Cast -- Product
+<h1 id="quill-cast-product-requirements">QUILL Cast – Product
 Requirements</h1>
 <p>Version 1.0</p>
-<h2 id="1-product-statement">1. Product statement</h2>
-<p>QUILL Cast is QUILL's podcast environment, shipped as its own small
+<h2 id="product-statement">1. Product statement</h2>
+<p>QUILL Cast is QUILL’s podcast environment, shipped as its own small
 Windows app for people who want their shows without loading a full
 writing environment. It is screen-reader-first, keyboard-complete, and
 deliberately small.</p>
-<h2 id="2-architecture-requirement-not-a-fork">2. Architecture
+<h2 id="architecture-requirement-not-a-fork">2. Architecture
 requirement: not a fork</h2>
 <ul>
 <li>R-1. All feature code lives in the upstream <code>quill</code>
@@ -205,7 +202,7 @@ positions, notes, and downloads live in the same
 <code>%APPDATA%\Quill</code> store QUILL uses. Subscribing in one app is
 visible in all.</li>
 </ul>
-<h2 id="3-scope">3. Scope</h2>
+<h2 id="scope">3. Scope</h2>
 <p>In scope (all reused from upstream):</p>
 <ul>
 <li>Subscriptions: search, feed URL, OPML import/export, ACB Media
@@ -217,7 +214,7 @@ menu (Play/Stop, Favorite toggle, Move to Folder, Unsubscribe, New
 Folder). Enter on a show plays its next unplayed episode directly.</li>
 <li><strong>One state-aware transport control</strong>
 (Play/Pause/Resume) and a <strong>Favorites toggle button</strong> for
-whatever show is currently playing, mirroring Quill Radio's main-page
+whatever show is currently playing, mirroring Quill Radio’s main-page
 pattern.</li>
 <li><strong>Resume Last Episode on Launch</strong> (an appliance switch,
 backed by a shared recently-played history store) and a <strong>Recently
@@ -237,31 +234,31 @@ episode notes with timestamp jump.</li>
 folder by construction).</li>
 <li>Downloads: queue, pause/resume all, Always Sync, auto-trim silence,
 normalize loudness, and <strong>auto-reconnect on a dropped
-connection</strong> (configurable attempts/wait, mirroring Quill Radio's
+connection</strong> (configurable attempts/wait, mirroring Quill Radio’s
 recording reconnect).</li>
 <li>System tray presence with podcast controls.</li>
-<li>Announcement-engine speech through the user's screen reader.</li>
+<li>Announcement-engine speech through the user’s screen reader.</li>
 <li>Help: Get FFmpeg (recovery download if the bundled copy goes
 missing), Open in Quill, Redeem Unlock Code (shared unlock store), basic
-Check for Updates against this repo's releases, About.</li>
+Check for Updates against this repo’s releases, About.</li>
 <li>Unlock-gated Audio Description Project menu (top-level) when
 <code>future.adp_assistant</code> is unlocked.</li>
 </ul>
-<p>Out of scope, by decision (D-1, "basic level of functionality"):</p>
+<p>Out of scope, by decision (D-1, “basic level of functionality”):</p>
 <ul>
 <li>Speech transcription engines (whisper.cpp / Faster Whisper / Vosk).
 Feed transcripts are plain downloads and remain fully functional;
 generating a transcript from audio is full-QUILL territory.</li>
-<li>QUILL's editor, AI assistants, braille, neural TTS voice stacks
+<li>QUILL’s editor, AI assistants, braille, neural TTS voice stacks
 (Kokoro/Piper), Pandoc conversions, Quillins. The installer excludes
 their payloads outright.</li>
-<li>"Send Show Notes to Editor" copies to the clipboard instead
+<li>“Send Show Notes to Editor” copies to the clipboard instead
 (documented standalone difference).</li>
-<li>QUILL's update extras (signed manifest feed, portable zip swaps,
+<li>QUILL’s update extras (signed manifest feed, portable zip swaps,
 version skipping). Check for Updates downloads the installer in-app and
 offers Install now; the rest stays in QUILL.</li>
 </ul>
-<h2 id="4-accessibility-requirements">4. Accessibility requirements</h2>
+<h2 id="accessibility-requirements">4. Accessibility requirements</h2>
 <ul>
 <li>A-1. Every interactive element has an accessible name; the inventory
 gate upstream audits the shared surfaces.</li>
@@ -274,27 +271,27 @@ engine; silent state changes are defects.</li>
 <li>A-5. Full keyboard operation, including Play Queue reordering; the
 tray menu is reachable with keyboard alone.</li>
 </ul>
-<h2 id="5-packaging-requirements">5. Packaging requirements</h2>
+<h2 id="packaging-requirements">5. Packaging requirements</h2>
 <ul>
-<li>P-1. PyInstaller onedir build with the app's own icon; Inno Setup
+<li>P-1. PyInstaller onedir build with the app’s own icon; Inno Setup
 installer with its own AppId, installs to its own directory
-({autopf}\QUILL Cast), per-user privileges by default.</li>
+({autopf}Cast), per-user privileges by default.</li>
 <li>P-2. Everything bundled, nothing downloaded at install or runtime:
 the onedir build carries the whole quill package and data
-(<code>collect_all("quill")</code>); ffmpeg installs to
-{app}\tools\ffmpeg, found via the wrapper exporting QUILL_APP_ROOT. A
-portable zip ships the same onedir build plus a <code>data\</code>
-folder that switches storage to travel with the app.</li>
-<li>P-3. Uninstall never deletes <code>%APPDATA%\Quill</code> -- QUILL
-or Quill Radio may still use it. Only the full QUILL uninstaller owns
-that decision.</li>
+(<code>collect_all("quill")</code>); ffmpeg installs to {app}, found via
+the wrapper exporting QUILL_APP_ROOT. A portable zip ships the same
+onedir build plus a <code>data\</code> folder that switches storage to
+travel with the app.</li>
+<li>P-3. Uninstall never deletes <code>%APPDATA%\Quill</code> – QUILL or
+Quill Radio may still use it. Only the full QUILL uninstaller owns that
+decision.</li>
 <li>P-4. Upgrade hygiene: the installer wipes its own
 <code>{app}\_internal</code> tree before re-laying files so module
 renames upstream never leave stale imports.</li>
 </ul>
-<h2 id="6-update-requirements">6. Update requirements</h2>
+<h2 id="update-requirements">6. Update requirements</h2>
 <ul>
-<li>U-1. Help &gt; Check for Updates queries this repository's GitHub
+<li>U-1. Help &gt; Check for Updates queries this repository’s GitHub
 releases (newest stable vs running version), downloads the installer
 in-app with spoken 25/50/75 percent milestones, and offers Install now /
 Open folder. No background checks in 1.0.</li>
@@ -302,9 +299,24 @@ Open folder. No background checks in 1.0.</li>
 <code>QUILL-Cast-Setup-&lt;version&gt;.exe</code> and tagged
 <code>v&lt;version&gt;</code> so the check can compare.</li>
 </ul>
-<h2 id="7-non-goals">7. Non-goals</h2>
+<h2 id="non-goals">7. Non-goals</h2>
 <p>macOS/Linux standalone builds (upstream QUILL covers macOS; the
 tray-icon pattern does not exist there), auto-updating in place,
-telemetry of any kind.</p>
+telemetry of any kind. A full DSP effects rack (reverb, tempo/pitch,
+spatial audio) – Sound Enhancements (§8) is a small, purpose-built EQ
+preset, compressor, and Smart Speed, not a general effects rack.</p>
+<h2 id="since-1.0">8. Since 1.0</h2>
+<ul>
+<li><strong>Sound Enhancements</strong> (Episode &gt; Sound
+Enhancements…): an equalizer preset, a compressor, and Smart Speed (live
+silence trimming between words/sentences), applied via an ffmpeg filter
+graph relayed to the playback engine over a loopback-only local HTTP
+server – shared with Quill Radio’s own Sound Enhancements. Off by
+default. Full seek/scrub-bar support while enhanced (an ffmpeg
+<code>-ss</code> restart is how scrubbing works, since a running relay
+can’t be seeked within; duration comes from an independent
+<code>ffprobe</code> call).</li>
+</ul>
+<p>See <code>CHANGELOG.md</code> for the full, versioned history.</p>
 </body>
 </html>

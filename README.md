@@ -11,6 +11,7 @@ QUILL Cast is not a fork. The whole application lives in the [quill](https://git
 - The full Podcast Manager: pinned Favorites / New Episodes / Continue Listening views, an Inbox that triages episodes into your own folders, and Search Everywhere across shows, episodes, notes, and fetched transcripts.
 - A cross-show Play Queue that survives restarts, reorders entirely from the keyboard, and now has its own top-level menu item and Command Palette entry.
 - Resume Last Episode on Launch, a Recently Played submenu, and Mute/Unmute.
+- Optional Sound Enhancements: an equalizer preset, a compressor, and Smart Speed (live silence trimming) -- full seek/scrub-bar support while enhanced (needs FFmpeg).
 - Feed-provided transcripts (Podcasting 2.0), episode notes that timestamp the moment, chapters, sleep-timer-safe volume boost.
 - Local podcasts: turn your own audio files into shows, with optional watched folders.
 - Subscribe to ACB Media Podcasts in one command.

@@ -43,7 +43,9 @@ Open Podcast Manager... (Ctrl+M), Add Podcast..., Import OPML..., Export OPML...
 
 ### Episode (Alt+E)
 
-A live now-playing line, then Play/Pause (Ctrl+P), Stop, **Mute/Unmute**, Next Chapter, Previous Chapter, Add Episode Note..., **Play Queue...** (the same reorderable queue the Manager offers, now one keystroke away), a **Recently Played** submenu (your last fifteen episodes, newest first, playable inline), and Sleep Timer... (fade out and stop after a set time, restoring your volume).
+A live now-playing line, then Play/Pause (Ctrl+P), Stop, **Mute/Unmute**, Next Chapter, Previous Chapter, Add Episode Note..., **Play Queue...** (the same reorderable queue the Manager offers, now one keystroke away), a **Recently Played** submenu (your last fifteen episodes, newest first, playable inline), Sleep Timer... (fade out and stop after a set time, restoring your volume), and **Sound Enhancements...**.
+
+**Sound Enhancements...** applies live, on top of whatever is playing: an equalizer preset (Flat, Bass Boost, Voice Clarity, Podcast), a compressor ("Even Out Volume"), and **Smart Speed** (trims silence between words and sentences, distinct from the one-time leading/trailing silence trim Downloads can already do to the saved file -- Smart Speed is reversible and live, on any episode, any time). All three need FFmpeg (Help > Get FFmpeg...); if it's missing, playback continues unfiltered and QUILL Cast tells you why. Turning anything on or off, or scrubbing the seek bar while enhanced, briefly reconnects -- QUILL Cast restarts the filter at your exact position, so you never lose your place, and pausing/resuming works normally throughout.
 
 ### Downloads (Alt+D)
 
@@ -54,7 +56,7 @@ Pause All Downloads, Resume All Downloads.
 One standalone difference from QUILL: "Send Show Notes to Editor" copies notes to the clipboard instead, since there is no editor here.
 
 - **Command Palette...** (Ctrl+Shift+P) -- every QUILL Cast command in one searchable list.
-- **Get FFmpeg...** -- a safety net: ffmpeg ships inside QUILL Cast for trim/normalize passes, but if it ever goes missing this downloads the official build so those settings work again.
+- **Get FFmpeg...** -- a safety net: ffmpeg ships inside QUILL Cast for trim/normalize passes and Sound Enhancements, but if it ever goes missing this downloads the official build so those settings work again.
 - **Redeem Unlock Code...** -- enter a signed unlock code for a pre-release capability. Verified entirely on your machine; nothing is transmitted. A code redeemed here counts for QUILL and Quill Radio too -- all three share one unlock store.
 - **Check for Updates...** -- compares your version with the newest release of QUILL Cast, downloads the installer in-app with spoken progress, then offers Install now (closes the app and runs the installer) or Open folder. QUILL Cast also runs this check quietly once a day on launch -- silent unless it actually finds something; Subscriptions > Preferences (Ctrl+,) turns it off.
 - **About QUILL Cast** -- version, sync statement, and the project address.
