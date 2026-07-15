@@ -51,6 +51,7 @@ The PyInstaller spec pulls the entire `quill` package -- code and data -- into a
 
 - [User Guide](docs/userguide.md)
 - [Release Notes](docs/release-notes-1.0.md)
+- [Changelog](CHANGELOG.md)
 - [Product Requirements](docs/prd.md)
 
 ## License
