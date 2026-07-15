@@ -42,7 +42,7 @@ Open Podcast Manager... (Ctrl+M), Add Podcast..., Import OPML..., Export OPML...
 
 ### Episode (Alt+E)
 
-A live now-playing line, then Play/Pause (Ctrl+P), Stop, Next Chapter, Previous Chapter, Add Episode Note...
+A live now-playing line, then Play/Pause (Ctrl+P), Stop, Next Chapter, Previous Chapter, Add Episode Note..., and Sleep Timer... (fade out and stop after a set time, restoring your volume).
 
 ### Downloads (Alt+D)
 
@@ -52,9 +52,14 @@ Pause All Downloads, Resume All Downloads.
 
 One standalone difference from QUILL: "Send Show Notes to Editor" copies notes to the clipboard instead, since there is no editor here.
 
+- **Command Palette...** (Ctrl+Shift+P) -- every QUILL Cast command in one searchable list.
 - **Redeem Unlock Code...** -- enter a signed unlock code for a pre-release capability. Verified entirely on your machine; nothing is transmitted. A code redeemed here counts for QUILL and Quill Radio too -- all three share one unlock store.
 - **Check for Updates...** -- compares your version with the newest release of QUILL Cast, downloads the installer in-app with spoken progress, then offers Install now (closes the app and runs the installer) or Open folder.
 - **About QUILL Cast** -- version, sync statement, and the project address.
+
+## Hardware media keys
+
+If your keyboard has media keys, Play/Pause, Stop, and Next/Previous Track (mapped to chapters) control QUILL Cast system-wide while it runs -- even from the tray. Keys another app already owns are left alone. Starting an episode also silences a playing radio stream and vice versa: nothing ever double-plays.
 
 ## The system tray
 
