@@ -39,6 +39,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     name="QUILLCast",
+    icon="assets/quill-cast.ico",
     console=False,
     upx=False,
     disable_windowed_traceback=False,
