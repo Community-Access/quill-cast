@@ -2,6 +2,18 @@
 
 Your shows, on their own. QUILL Cast takes the podcast environment QUILL users already know and gives it a window, a menu bar, and a tray icon of its own -- for the days you want your queue without the manuscript.
 
+## What's new in 1.0.4
+
+- **A real three-band equalizer, per podcast.** Sound Enhancements' single preset choice became Bass, Mid, and Treble sliders (-12 to +12 dB each), freely adjustable. The old presets are still there as a "Quick preset" shortcut. And every enhancement setting -- the three bands, Even Out Volume, Smart Speed -- is now per-podcast: a shared default plus a per-show override, exactly like playback speed already worked. Open Sound Enhancements while an episode is playing to adjust that show specifically; with nothing playing, you're adjusting the shared default.
+- **A real dialog when you're already up to date.** Help > Check for Updates used to only announce "up to date" -- easy to miss. It now shows a proper dialog, the same as a genuine update does.
+- **Quieter by default.** Preferences (Ctrl+,) gained "Announce dialog transitions" (off by default) -- previously every dialog spoke "Entered/Exited" cues with no way to turn it off.
+- **Documentation, right in the Help menu.** User Guide, Release Notes, and Product Requirements now open directly from Help, rendered in your browser.
+
+## What's new in 1.0.3
+
+- **Three ways to view the Inbox and every cross-show list.** A new "View cross-show lists as" combo box next to the Podcast Manager's "Sort episodes" control offers **Flat list** (one stream sorted purely by date across every show -- a true "what's new, period" feed), **Grouped in list** (the default and pre-existing look -- each show's episodes cluster together, read one podcast's backlog at a time), or **Folders per podcast** (real expandable tree nodes, one per show, under the Inbox and every other pinned view).
+- **Per-podcast sort order.** The sort control now actually applies to these cross-show views too (it previously only affected a single show's own list) -- and any podcast can have its own sort order that overrides the shared default: select that show (or its Folders node) and change Sort Episodes. Also fixed: setting a podcast's own playback speed no longer silently resets any other setting override that podcast already had.
+
 ## What's new in 1.0.2
 
 - **Sound Enhancements.** Episode > Sound Enhancements... adds an equalizer preset (Flat, Bass Boost, Voice Clarity, Podcast), a compressor ("Even Out Volume"), and **Smart Speed** (trims silence between words and sentences, live and reversible on any episode, distinct from the one-time leading/trailing trim Downloads already offers) -- all applied through the ffmpeg QUILL Cast already uses for download processing. Off by default. Full seek and scrub-bar support while enhanced: scrubbing or toggling anything on/off never loses your place or forces a paused episode to resume.
