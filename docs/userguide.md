@@ -19,7 +19,7 @@ Everything QUILL Cast announces goes through the same announcement engine QUILL 
 Tab order: the now-playing line, the library tree, then five buttons.
 
 - **Now playing** (read-only text): what is playing; mirrored in the status bar and the Episode menu.
-- **Library** (tree): the same pinned views the Podcast Manager shows -- **Favorites**, **New Episodes**, **Continue Listening**, **Inbox** -- above your nested library folders and the shows filed in them, each with a live unplayed-episode count. Enter on a show plays its next episode; Enter on a pinned view opens the Podcast Manager to that view. Delete unsubscribes a show (with confirmation) or dissolves a folder (your shows step safely to the top level -- nothing is ever unsubscribed by deleting a folder). Shift+F10 opens the full context menu: Play/Stop, Add/Remove Favorites, Move to Folder, Unsubscribe, New Folder, and Open Manager.
+- **Library** (tree): the same pinned views the Podcast Manager shows -- **Favorites**, **New Episodes**, **Continue Listening**, **Inbox** -- above your nested library folders and the shows filed in them, each with a live unplayed-episode count. Enter on a show plays its next episode; Enter on a pinned view opens the Podcast Manager to that view. Delete unsubscribes a show (with confirmation) or dissolves a folder (your shows step safely to the top level -- nothing is ever unsubscribed by deleting a folder). Shift+F10 opens the full context menu: Play/Stop, Add/Remove Favorites, Move to Folder, **Download All Episodes**, **Remove All Episodes**, Unsubscribe, New Folder, and Open Manager.
 - Buttons: **Play** (becomes **Pause** while playing, **Resume** while paused -- one transport control that is never dead), **Stop**, **Add to Favorites** (becomes **Remove from Favorites** when the playing show is already a favorite), **Open Manager...**, **Add Podcast...**.
 
 ## The Podcast Manager
@@ -34,6 +34,7 @@ The Manager (Ctrl+M) is where episode-level life happens, and it is the same Man
 - **Episode notes** timestamp the playing moment; Enter on a note jumps playback there.
 - **Local podcasts**: turn folders of your own audio into shows, with optional watched folders that pick up dropped files.
 - **Always Sync**, **auto-trim silence**, **normalize loudness**, and a live **volume boost** that respects the Sleep Timer's restore volume.
+- **Download All Episodes / Remove All Episodes** on a show's context menu: Download All queues everything not already downloaded or in progress, no extra confirmation needed. Remove All Episodes confirms first, then -- only if the show has downloaded files -- asks separately whether to delete those too; the show itself stays subscribed either way.
 
 ## Menus
 

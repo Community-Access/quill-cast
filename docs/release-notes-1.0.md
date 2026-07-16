@@ -2,9 +2,10 @@
 
 Your shows, on their own. QUILL Cast takes the podcast environment QUILL users already know and gives it a window, a menu bar, and a tray icon of its own -- for the days you want your queue without the manuscript.
 
-## What's new (unreleased)
+## What's new in 1.0.2
 
 - **Sound Enhancements.** Episode > Sound Enhancements... adds an equalizer preset (Flat, Bass Boost, Voice Clarity, Podcast), a compressor ("Even Out Volume"), and **Smart Speed** (trims silence between words and sentences, live and reversible on any episode, distinct from the one-time leading/trailing trim Downloads already offers) -- all applied through the ffmpeg QUILL Cast already uses for download processing. Off by default. Full seek and scrub-bar support while enhanced: scrubbing or toggling anything on/off never loses your place or forces a paused episode to resume.
+- **Download All Episodes / Remove All Episodes.** New on every show's context menu, in the Podcast Manager and the main library tree alike. Download All queues everything not already downloaded or in progress -- no extra confirmation, just like downloading one episode. Remove All Episodes confirms first, then -- only if the show actually has downloaded files -- asks separately whether to delete those too; either way the show stays subscribed, so a future feed refresh can bring episodes back.
 
 ## What's new in 1.0.1
 
