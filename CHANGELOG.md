@@ -2,6 +2,12 @@
 
 All notable changes to QUILL Cast are documented here. See `docs/release-notes-1.0.md` for the fuller narrative version.
 
+## 1.0.5
+
+- Skip Forward and Skip Back (Episode menu), a fixed number of seconds each -- 30 forward, 15 back by default -- different from Next/Previous Chapter, which jumps to the nearest chapter marker instead. New **Skip Settings...** dialog (Episode menu) sets how far each jumps: open it while an episode is playing to set that show's own distance, or with nothing playing to set the shared default.
+- Auto-skip intro and auto-skip outro, per podcast (in the same Skip Settings... dialog, only when a show is loaded): intro-skip jumps forward automatically on a fresh start (never when resuming your saved position); outro-skip ends the episode early, exactly as if it had finished naturally -- auto-advance and delete-after-play still fire.
+- **Playlists**, below the Play Queue in the Podcast Manager's tree: saved, named episode lists. **New Playlist...** builds a manually curated list (add episodes from any episode's right-click menu with **Add to Playlist...**). **New Smart Playlist...** builds a rule-based list that re-resolves live every time you open it -- which shows, episode status, how recent, how long, and how to sort. Edit Rules..., Rename, and Delete round out each playlist's context menu.
+
 ## 1.0.4
 
 - Sound Enhancements is now a real three-band equalizer: Bass, Mid, and Treble sliders (-12 to +12 dB each), freely adjustable. The old presets (Flat/Bass Boost/Voice Clarity/Podcast) still work as a "Quick preset" shortcut. Every enhancement setting -- the three bands, Even Out Volume, and Smart Speed -- is now **per-podcast**: a shared default plus a per-show override, the same way playback speed already worked. Open Sound Enhancements while an episode is playing to adjust that show specifically; open it with nothing playing to adjust the shared default.

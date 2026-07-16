@@ -255,6 +255,15 @@ podcast, leaving everyone else on the shared default.</li>
 <li><strong>Play Queue</strong>: Play Next or Add to Queue on any
 episode; the queue auto-advances, survives restarts, and reorders from
 the keyboard (Move Up/Down, or Mark then Move for long hops).</li>
+<li><strong>Playlists</strong>, below the Play Queue in the tree: saved,
+named episode lists, distinct from the (transient) Play Queue and the
+(fixed) pinned views. Right-click Playlists for <strong>New
+Playlist...</strong> (manual -- add episodes one at a time via
+<strong>Add to Playlist...</strong> on any episode's context menu) or
+<strong>New Smart Playlist...</strong> (rule-based -- which shows,
+episode status, how recent, how long, and how to sort, re-resolved live
+every time you open it). Edit Rules..., Rename (F2), and Delete round
+out each playlist's own context menu.</li>
 <li><strong>Search Everywhere</strong> searches shows, episodes, your
 notes, and fetched transcripts at once and jumps to the result.</li>
 <li><strong>Transcripts</strong>: when a feed provides one (Podcasting
@@ -288,12 +297,14 @@ Launch, automatic Check for Updates, and Announce dialog transitions
 Send to Tray (Ctrl+W), Exit.</p>
 <h3 id="episode-alte">Episode (Alt+E)</h3>
 <p>A live now-playing line, then Play/Pause (Ctrl+P), Stop,
-<strong>Mute/Unmute</strong>, Next Chapter, Previous Chapter, Add
-Episode Note..., <strong>Play Queue...</strong> (the same reorderable
-queue the Manager offers, now one keystroke away), a <strong>Recently
+<strong>Mute/Unmute</strong>, Next Chapter, Previous Chapter,
+<strong>Skip Forward</strong>, <strong>Skip Back</strong>, Add Episode
+Note..., <strong>Play Queue...</strong> (the same reorderable queue the
+Manager offers, now one keystroke away), a <strong>Recently
 Played</strong> submenu (your last fifteen episodes, newest first,
 playable inline), Sleep Timer... (fade out and stop after a set time,
-restoring your volume), and <strong>Sound Enhancements...</strong>.</p>
+restoring your volume), <strong>Sound Enhancements...</strong>, and
+<strong>Skip Settings...</strong>.</p>
 <p><strong>Sound Enhancements...</strong> applies live, on top of
 whatever is playing: a three-band equalizer (Bass, Mid, Treble sliders,
 -12 to +12 dB each) plus a "Quick preset" shortcut (Flat, Bass Boost,
@@ -310,6 +321,16 @@ your place, and pausing/resuming works normally throughout. Every
 setting here is <strong>per-podcast</strong>: open it while an episode
 is playing to set that show's own sound, or with nothing playing to set
 the shared default every other show follows.</p>
+<p><strong>Skip Forward</strong> and <strong>Skip Back</strong> jump the
+current episode by a fixed number of seconds -- 30 forward, 15 back by
+default -- unlike Next/Previous Chapter, which jump to the nearest
+chapter marker instead. <strong>Skip Settings...</strong> sets how far
+each jumps (per-podcast, the same way Sound Enhancements is), and, only
+when a show is loaded, <strong>auto-skip intro</strong> and
+<strong>auto-skip outro</strong> (0 = off): intro-skip jumps forward
+automatically on a fresh start (never when resuming your saved
+position); outro-skip ends the episode early, exactly as if it had
+finished naturally -- auto-advance and delete-after-play still fire.</p>
 <h3 id="downloads-altd">Downloads (Alt+D)</h3>
 <p>Pause All Downloads, Resume All Downloads.</p>
 <h3 id="help-alth">Help (Alt+H)</h3>

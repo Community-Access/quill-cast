@@ -2,6 +2,12 @@
 
 Your shows, on their own. QUILL Cast takes the podcast environment QUILL users already know and gives it a window, a menu bar, and a tray icon of its own -- for the days you want your queue without the manuscript.
 
+## What's new in 1.0.5
+
+- **Skip Forward and Skip Back.** Two new Episode-menu commands jump the current episode by a fixed number of seconds -- 30 forward, 15 back by default -- for the times a chapter marker isn't where you want to land. A new **Skip Settings...** dialog sets how far each jumps, per podcast: open it while an episode is playing to set that show's own distance, or with nothing playing to set the shared default every other show follows.
+- **Auto-skip intro and outro, per podcast.** The same Skip Settings... dialog offers, only when a show is loaded, auto-skip intro (jump forward automatically the moment an episode starts fresh -- never when resuming your saved position, so you never lose your place) and auto-skip outro (end the episode early, exactly as if it had reached its own true end -- auto-advance to the next queued episode and delete-after-play still fire). Both off by default.
+- **Playlists.** A new "Playlists" node sits below the Play Queue in the Podcast Manager's tree -- saved, named episode lists, distinct from the transient Play Queue and the four fixed pinned views. Build a manual Playlist by adding episodes one at a time (any episode's right-click menu gets **Add to Playlist...**), or create a Smart Playlist that re-resolves live every time you open it, from rules you set: which shows, episode status (unplayed/in progress/played), how recently published, a minimum and maximum length, and how to sort the result.
+
 ## What's new in 1.0.4
 
 - **A real three-band equalizer, per podcast.** Sound Enhancements' single preset choice became Bass, Mid, and Treble sliders (-12 to +12 dB each), freely adjustable. The old presets are still there as a "Quick preset" shortcut. And every enhancement setting -- the three bands, Even Out Volume, Smart Speed -- is now per-podcast: a shared default plus a per-show override, exactly like playback speed already worked. Open Sound Enhancements while an episode is playing to adjust that show specifically; with nothing playing, you're adjusting the shared default.
