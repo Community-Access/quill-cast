@@ -2,6 +2,14 @@
 
 All notable changes to QUILL Cast are documented here. See `docs/release-notes-1.0.md` for the fuller narrative version.
 
+## 1.0.7
+
+- **Update in one click -- QUILL Cast installs it and restarts itself.** When an update is available, choose Download, then **Install and restart now**: QUILL Cast applies the update (extracting the new portable files over your folder, or running the installer silently) and relaunches automatically, keeping all your shows, downloads, and settings. No more closing the app, unzipping, and swapping folders by hand. Shared across every Quill app.
+
+## 1.0.6
+
+- **Private feeds (username and password)**: subscribe to Patreon supporter feeds, premium shows, and other HTTP Basic-auth-protected feeds. Add by Feed URL detects a protected feed and opens a **Feed Credentials** prompt; a new **Feed Credentials...** item on every show's context menu (main library tree and Podcast Manager alike) changes or clears them later. Credentials cover everything for that show -- refresh, downloads, streaming, transcripts, chapters -- but are only ever sent to the feed's own host, never to third-party content hosts. Passwords are stored in Windows Credential Manager (installed) or DPAPI-encrypted inside the portable `data` folder (portable), never in `podcasts.json` or logs; Export OPML never includes them. A failed sign-in during background refresh announces a clear "update credentials" message instead of a generic network error.
+
 ## 1.0.5
 
 - Skip Forward and Skip Back (Episode menu), a fixed number of seconds each -- 30 forward, 15 back by default -- different from Next/Previous Chapter, which jumps to the nearest chapter marker instead. New **Skip Settings...** dialog (Episode menu) sets how far each jumps: open it while an episode is playing to set that show's own distance, or with nothing playing to set the shared default.
